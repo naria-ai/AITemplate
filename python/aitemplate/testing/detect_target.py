@@ -31,6 +31,7 @@ FLAG = ""
 
 
 def _detect_cuda_with_nvidia_smi():
+    print("JOSE WAS HERE")
     try:
         proc = Popen(
             ["nvidia-smi", "--query-gpu=gpu_name", "--format=csv"],
@@ -42,7 +43,7 @@ def _detect_cuda_with_nvidia_smi():
         sm_names = {
             "70": ["V100"],
             "75": ["T4", "Quadro T2000"],
-            "80": ["PG509", "A100", "A10G", "RTX 30", "A30", "RTX 40"],
+            "80": ["A10", "PG509", "A100", "A10G", "RTX 30", "A30", "RTX 40"],
             "90": ["H100"],
         }
         for sm, names in sm_names.items():
@@ -54,6 +55,7 @@ def _detect_cuda_with_nvidia_smi():
 
 
 def _detect_cuda():
+    print("JOSE WAS HERE2")
     try:
         from cuda import cuda
 
@@ -98,6 +100,7 @@ def _detect_rocm():
 
 
 def detect_target(**kwargs):
+    print("JOSE WAS HERE3")
     """Detect GPU target based on nvidia-smi and rocminfo
 
     Returns
