@@ -849,6 +849,7 @@ class StableDiffusionAITPipeline:
         latents: Optional[torch.FloatTensor] = None,
         output_type: Optional[str] = "pil",
         return_dict: bool = True,
+        **kwargs,
     ):
         r"""
         Function invoked when calling the pipeline for generation.
